@@ -1,7 +1,5 @@
 const startBtnEl = document.querySelector('button[data-start]');
-console.log(startBtnEl);
 const stopBtnEl = document.querySelector('button[data-stop]');
-console.log(stopBtnEl);
 const bodyEl = document.querySelector('body');
 
 stopBtnEl.setAttribute('disabled', 'true');
