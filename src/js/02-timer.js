@@ -3,6 +3,8 @@ import flatpickr from "flatpickr";
 // Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
 
+import Notiflix from 'notiflix';
+
 const inputPickerEl = document.querySelector('#datetime-picker');
 const btnStartEl = document.querySelector('button[data-start]');
 const spanDaysEl = document.querySelector('span[data-days]');
@@ -21,7 +23,8 @@ const options = {
       const currentTime = Date.now();
           const ms = selectedDates[0] - currentTime;
           if (ms < 0) {
-            window.alert('Please choose a date in the future');
+            Notiflix.Notify.failure('Please choose a date in the future');
+            // window.alert('Please choose a date in the future');
           } else {
             btnStartEl.removeAttribute('disabled', 'true');
             
@@ -60,7 +63,9 @@ function pad(value) {
   return String(value).padStart(2, '0');
 }
 function padDays(value) {
-  return String(value).padStart(3, '0');
+  if(value < 100) {
+  return String(value).padStart(2, '0');
+ } return String(value).padStart(3, '0');
 }
 
 function convertMs(ms) {

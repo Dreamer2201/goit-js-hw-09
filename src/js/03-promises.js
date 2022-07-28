@@ -5,8 +5,6 @@ import Notiflix from 'notiflix';
   const firstDelayInputEl = document.querySelector('input[name="delay"]');
   const stepDelayInputEl = document.querySelector('input[name="step"]');
   const amountInputEl = document.querySelector('input[name="amount"]');
-  const btnSubmitEl = document.querySelector('button');
-  
 
   function onSubmitForm (event) {
     event.preventDefault();
@@ -14,51 +12,39 @@ import Notiflix from 'notiflix';
     const firstDelay = firstDelayInputEl.value;
     const amount = event.currentTarget.elements[2].value;
      
-    for (let position = 1; position <= amount; position ++) {
-      console.log(position);
+    for (let position = 0; position < amount; position ++) {
+
       setTimeout(() => createPromise(position, stepDelay)
       .then(({ position, stepDelay }) => {
         
-        Notiflix.Notify.info(`✅ Fulfilled promise ${position} in ${stepDelay}ms`,
+        Notiflix.Notify.success(`✅ Fulfilled promise ${position+1} in ${stepDelay}ms`,
         {
-          timeout: 6000, 
+          timeout: (10000 - position * stepDelay), 
         },);
         // console.log(`✅ Fulfilled promise ${position} in ${stepDelay}ms`);
         })
       .catch(({ position, stepDelay }) => {
-        Notiflix.Notify.info(`❌ Rejected promise ${position} in ${stepDelay}ms`,
+        Notiflix.Notify.failure(`❌ Rejected promise ${position+1} in ${stepDelay}ms`,
         {
-          timeout: 6000,
+          timeout: (10000 - position * stepDelay),
         },);
         // console.log(`❌ Rejected promise ${position} in ${stepDelay}ms`);
-        }, firstDelay))
-        
- } 
- 
+        }), firstDelay);
+  } 
   }
  
   function createPromise(position, stepDelay) {
-
+    
    const shouldResolve = Math.random() > 0.3;
-
    return new Promise ((resolve, reject) => {
     setTimeout(() => {
-      
       if(shouldResolve) {
         resolve({position, stepDelay})
       } else {
         reject({position, stepDelay});
       }
     }, position * stepDelay);
-   
    }); 
 };
-
-function thanksGiven() {
-  Notiflix.Notify.info('It was such a hard to do, but interesting! Thank you for your work!',
-        {
-          timeout: 6000,
-        },);
-}
 
 formEl.addEventListener('submit', onSubmitForm);

@@ -31,4 +31,12 @@ img {
  align-items: center;
  outline: 1px solid black;
 }
-
+.value {
+  font-size: 36px;
+  color: #ff0000;
+  text-shadow: 2px 2px 2px #000000;
+}
+.label {
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #ffffff;
+}
