@@ -6,45 +6,33 @@ import Notiflix from 'notiflix';
   const stepDelayInputEl = document.querySelector('input[name="step"]');
   const amountInputEl = document.querySelector('input[name="amount"]');
 
+  formEl.addEventListener('submit', onSubmitForm);
+
   function onSubmitForm (event) {
     event.preventDefault();
-    const stepDelay = stepDelayInputEl.value;
-    const firstDelay = firstDelayInputEl.value;
-    const amount = event.currentTarget.elements[2].value;
-     
-    for (let position = 0; position < amount; position ++) {
-
-      setTimeout(() => createPromise(position, stepDelay)
-      .then(({ position, stepDelay }) => {
-        
-        Notiflix.Notify.success(`✅ Fulfilled promise ${position+1} in ${stepDelay}ms`,
-        {
-          timeout: (10000 - position * stepDelay), 
-        },);
-        // console.log(`✅ Fulfilled promise ${position} in ${stepDelay}ms`);
-        })
-      .catch(({ position, stepDelay }) => {
-        Notiflix.Notify.failure(`❌ Rejected promise ${position+1} in ${stepDelay}ms`,
-        {
-          timeout: (10000 - position * stepDelay),
-        },);
-        // console.log(`❌ Rejected promise ${position} in ${stepDelay}ms`);
-        }), firstDelay);
+    let delay = Number(firstDelayInputEl.value);
+    const step = Number(stepDelayInputEl.value);
+    const amount = Number(amountInputEl.value);
+ 
+    for (let position = 1; position <= amount; position ++) {
+      createPromise(position, delay)
+      .then(({ position, delay }) => {
+        Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`,)})
+      .catch(({ position, delay }) => {
+        Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`,)})
+      delay += step;
   } 
   }
  
-  function createPromise(position, stepDelay) {
-    
-   const shouldResolve = Math.random() > 0.3;
-   return new Promise ((resolve, reject) => {
+  function createPromise(position, delay) {
+    const shouldResolve = Math.random() > 0.3;
+    return new Promise ((resolve, reject) => {
     setTimeout(() => {
       if(shouldResolve) {
-        resolve({position, stepDelay})
+        resolve({position, delay})
       } else {
-        reject({position, stepDelay});
+        reject({position, delay});
       }
-    }, position * stepDelay);
+    }, delay);
    }); 
 };
-
-formEl.addEventListener('submit', onSubmitForm);

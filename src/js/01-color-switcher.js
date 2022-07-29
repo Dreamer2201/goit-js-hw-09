@@ -10,7 +10,7 @@ stopBtnEl.addEventListener('click', onStopBtnClick);
 let intervalId = null;
 
 function onStartBtnClick() {
-    intervalId = setInterval(getRandomHexColor, 1000, 1000);
+    intervalId = setInterval(getRandomColorBody, 1000, 1000);
     startBtnEl.setAttribute('disabled', 'true');
     stopBtnEl.removeAttribute('disabled', 'true');
 };
@@ -19,6 +19,6 @@ function onStopBtnClick() {
     startBtnEl.removeAttribute('disabled', 'true');
     stopBtnEl.setAttribute('disabled', 'true');
 };
-function getRandomHexColor() {
+function getRandomColorBody() {
     return bodyEl.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 };
