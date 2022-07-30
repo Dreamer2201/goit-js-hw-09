@@ -41,6 +41,7 @@ btnStartEl.setAttribute('disabled', 'false');
 }
 
 function timerStart() {
+  inputPickerEl.setAttribute('disabled', 'true');
   const selectedDay = new Date(inputPickerEl.value);
   const selectedTimeMs = selectedDay.getTime();  
   const intervalId = setInterval(() => {
@@ -49,6 +50,7 @@ function timerStart() {
 
   if (deltaTime < 0 && deltaTime > -1000) {
     clearInterval(intervalId);
+    inputPickerEl.removeAttribute('disabled', 'true');
   } else {
     updateTime(convertMs(deltaTime));
   }
