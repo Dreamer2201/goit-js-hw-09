@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="/src/css/common.css" />
   </head>
   <body>
+    <div class="container">
     <p><a href="/src/index.html">Go back</a></p>
 
-    <input type="text" id="datetime-picker" />
+    <input type="text" id="datetime-picker" placeholder="select date time"/>
     <button type="button" data-start>Start</button>
 
     <div class="timer">
@@ -30,7 +31,61 @@
         <span class="label">Seconds</span>
       </div>
     </div>
+  </div>
+  
+    <!-- timer in circles -->
+  <div class="container">
+      <div class="time">
+      <div class="circle" style="--crl: #d41608">
+        <div class="dot dot-day"></div>
+        <svg>
+          <circle cx="70px" cy="70px" r="70px"></circle>
+          <circle cx="70px" cy="70px" r="70px" id="dd"></circle>
+        </svg>
+        <div id="days">
+          <span>00</span>
+          <span>days</span>
+        </div>
+      </div>
 
+      <div class="circle" style="--crl: #069923" #069923>
+        <div class="dot dot-hours"></div>
+        <svg>
+          <circle cx="70px" cy="70px" r="70px"></circle>
+          <circle cx="70px" cy="70px" r="70px" id="dh"></circle>
+        </svg>
+        <div id="hours">
+          <span>00</span>
+          <span>hours</span>
+        </div>
+      </div>
+
+      <div class="circle" style="--crl: #750863">
+        <div class="dot dot-min"></div>
+        <svg>
+          <circle cx="70px" cy="70px" r="70px"></circle>
+          <circle cx="70px" cy="70px" r="70px" id="dm"></circle>
+        </svg>
+        <div id="minutes">
+          <span>00</span>
+          <span>min</span>
+        </div>
+      </div>
+
+      <div class="circle" style="--crl: #ebeb13">
+        <div class="dot dot-sec"></div>
+        <svg>
+          <circle cx="70px" cy="70px" r="70px"></circle>
+          <circle cx="70px" cy="70px" r="70px" id="ds"></circle>
+        </svg>
+        <div id="seconds">
+          <span>00</span>
+          <span>sec</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
     <script src="/src/js/02-timer.js" type="module"></script>
   </body>
 </html>
