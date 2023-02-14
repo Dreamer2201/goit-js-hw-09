@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carusel</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+</head>
+<body>
+    <p><a href="/src/index.html">Go back</a></p>
+    <div class="caruselBox">
+        <button type="button" id="prevImg">
+            <svg class="icon icon-arrow-left2" width="20" height="20">
+                <use href="/src/symbol-defs.svg#icon-arrow-left2"></use>
+            </svg>
+        </button>
+        <div class="elem elemOne active">
+            <img class="img" src="/src/images/landscape.jpeg" />
+        </div>
+        <div class="elem elemTwo">
+            <img class="img" src="/src/images/lavandas.jpeg" />
+        </div>
+        <div class="elem elemThree">
+            <img class="img" src="/src/images/lion.jpeg" />
+        </div>
+        <div class="elem elemFour">
+            <img class="img" src="/src/images/parrot.jpeg"/>
+        </div>
+        <button type="button" id="nextImg">
+            <svg class="icon icon-arrow-right2" width="20" height="20">
+                <use href="/src/symbol-defs.svg#icon-arrow-right2"></use>
+            </svg>
+        </button>
+        <div class="dotsBox">
+            <ul class="dotsList">
+                <li class="dot active-dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+            </ul>
+        </div>
+    </div>
+    <script src="/src/js/carusel.js"></script>
+</body>
+</html>

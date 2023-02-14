@@ -1,0 +1,56 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #212121;
+    line-height: 1.5;
+    background-color: #cfd2b8;
+  }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 10px 20px;
+
+  }
+  .boxCard {
+    width: 200px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 1px solid #a59898;
+    box-shadow: 1px -1px 9px 0px rgba(87,80,78,0.59);
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    background-color: rgb(176, 213, 225);
+  }
+  .cardText {
+    font-size: 14px;
+  }
+  .dotsCard {
+    color: #ff0000;
+  }
+  .show-more .dotsCard {
+    display: none;
+  }
+  .show-more .additionalText {
+    display: inline;
+  }
+  .additionalText {
+    display: none;
+  }
+  .btnReadMore {
+    width: 150px;
+    height: 20px;
+    padding: 4px;
+    color: #ff0000;
+  }
+  .imgCard {
+    display: block;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+  
