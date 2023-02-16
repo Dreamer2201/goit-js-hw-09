@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #f4eded;
+    line-height: 1.5;
+    background-color: rgb(48, 45, 45);
+  }
+  .textBlock {
+    position: relative;
+  }
+  .itemText {
+    font-size: large;
+    opacity: 0;
+  }
+  .O .itemText {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+  }
+  .K .itemText {
+    position: absolute;
+    top: 100px;
+    left: 35px;
+  }
+  .S .itemText {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+  }
+  .A .itemText {
+    position: absolute;
+    top: 100px;
+    left: 65px;
+  }
+  .N .itemText {
+    position: absolute;
+    top: 100px;
+    left: 80px;
+  }
+  .nextA .itemText {
+    position: absolute;
+    top: 100px;
+    left: 95px;
+  }
+  /* O */
+  /* .one {
+    animation: changeOpacity 100ms linear 100ms 1 normal none;
+  }
+  .two {
+    animation: changeOpacity 100ms linear 200ms 1 normal none;
+  }
+  .three {
+    animation: changeOpacity 100ms linear 300ms 1 normal none;
+  }
+  .four {
+    animation: changeOpacity 100ms linear 400ms 1 normal none;
+  }
+  .five {
+    animation: changeOpacity 100ms linear 500ms 1 normal none;
+  }
+  .six {
+    animation: changeOpacity 100ms linear 600ms 1 normal none;
+  }
+  .seven {
+    animation: changeOpacity 100ms linear 700ms 1 normal none;
+  }
+  .eight{
+    animation: changeOpacity 100ms linear 800ms 1 normal none;
+  }
+  .nine {
+    animation: changeOpacity 100ms linear 900ms 1 normal none;
+  }
+  .ten {
+    animation: changeOpacity 100ms linear 1000ms 1 normal forwards;
+  } */
+
+  /* odd */
+
+  .odd .one {
+    animation: changeOpacity 100ms linear 100ms 1 normal none;
+  }
+  .odd .two {
+    animation: changeOpacity 100ms linear 200ms 1 normal none;
+  }
+  .odd .three {
+    animation: changeOpacity 100ms linear 300ms 1 normal none;
+  }
+  .odd .four {
+    animation: changeOpacity 100ms linear 400ms 1 normal none;
+  }
+  .odd .five {
+    animation: changeOpacity 100ms linear 500ms 1 normal none;
+  }
+  .odd .six {
+    animation: changeOpacity 100ms linear 600ms 1 normal none;
+  }
+  .odd .seven {
+    animation: changeOpacity 100ms linear 700ms 1 normal none;
+  }
+  .odd .eight{
+    animation: changeOpacity 100ms linear 800ms 1 normal none;
+  }
+  .odd .nine {
+    animation: changeOpacity 100ms linear 900ms 1 normal none;
+  }
+  .odd .ten {
+    animation: changeOpacity 100ms linear 1000ms 1 normal forwards;
+  }
+
+  /* even */
+  .even .one {
+    animation: changeOpacity 100ms linear 150ms 1 normal none;
+  }
+  .even .two {
+    animation: changeOpacity 100ms linear 250ms 1 normal none;
+  }
+  .even .three {
+    animation: changeOpacity 100ms linear 350ms 1 normal none;
+  }
+  .even .four {
+    animation: changeOpacity 100ms linear 450ms 1 normal none;
+  }
+  .even .five {
+    animation: changeOpacity 100ms linear 550ms 1 normal none;
+  }
+  .even .six {
+    animation: changeOpacity 100ms linear 650ms 1 normal none;
+  }
+  .even .seven {
+    animation: changeOpacity 100ms linear 750ms 1 normal none;
+  }
+  .even .eight{
+    animation: changeOpacity 100ms linear 850ms 1 normal none;
+  }
+  .even .nine {
+    animation: changeOpacity 100ms linear 950ms 1 normal none;
+  }
+  .even .ten {
+    animation: changeOpacity 100ms linear 1050ms 1 normal forwards;
+  }
+
+  @keyframes changeOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+  }
+
+  /* before line */
+
+  .lineBeforeBox {
+    position: relative;
+  }
+  .line {
+    margin-left: 50px;
+    font-size: 20px;
+    color: #fff;
+    transition-property: margin-left;
+    transition-duration: 1s;
+  }
+  .line::before {
+    position: absolute;
+    top:50%;
+    left: 5px;
+    content: '';
+    background-color: rgb(218, 179, 179);
+    height: 1px;
+    width: 20px;
+    display: block;
+    transition-property: width;
+    transition-duration: 1s;
+  }
+ 
+  .long .line {
+    margin-left: 150px;
+    margin-right: auto;
+  }
+  .long .line::before {
+    position: absolute;
+    top:50%;
+    left: 5px;
+    content: '';
+    background-color: rgb(218, 179, 179);
+    height: 1px;
+    width: 100px;
+    display: block;
+  }
+
+/* apearence name */
+.wrapperName {
+  position: relative;
+}
+.apearenceName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+.first .one {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+  animation: transformNameTop 2000ms linear 1s 1 normal forwards;
+}
+.first .two {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+  animation: transformNameBottom 2000ms linear 1s 1 normal forwards;
+}
+.first .three,
+.second .three,
+.third .three {
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+}
+.second .one {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+  animation: transformNameTop 2000ms linear 1s 1 normal forwards;
+}
+.second .two {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+  animation: transformNameBottom 2000ms linear 1s 1 normal forwards;
+}
+.third .one {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+  animation: transformNameTop 2000ms linear 1s 1 normal forwards;
+}
+.third .two {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  opacity: 0;
+  animation: apearenceName 2000ms linear 1s 1 normal forwards;
+  animation: transformNameBottom 2000ms linear 1s 1 normal forwards;
+}
+
+
+
+@keyframes apearenceName {
+  0% {
+    color: transparent;
+  }
+  100% {
+      
+      color: #fff;
+  }
+  
+}
+
+@keyframes transformNameTop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+@keyframes transformNameBottom {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(40px);
+    opacity: 1;
+  }
+}
+
